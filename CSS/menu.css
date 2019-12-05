@@ -1,0 +1,244 @@
+/* Menu bar */
+button {
+    background: #313131;
+    padding: 50px 60px;
+    border: none;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #FFFFFF;
+    /* position: fixed; */
+    left: 10%;
+}
+
+.index {
+    border-bottom-left-radius: 23px;
+    background-image: url(https://icon-library.net/images/home-icon-png-white/home-icon-png-white-4.jpg);
+    background-color: #313131;
+    background-size: 40px 40px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.pokeball {
+    background-image: url(https://toppng.com/public/uploads/thumbnail//okeball-graphic-by-maratuna-on-deviantart-banner-free-pokeball-icon-white-11563088134ll8ahuql0q.png);
+    background-color: #313131;
+    background-size: 37px 37px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.move {
+    background-image: url(https://clip.cookdiary.net/sites/default/files/wallpaper/pikachu-clipart/192974/pikachu-clipart-png-icon-192974-8884874.png);
+    background-color: #313131;
+    background-size: 45px 45px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.items {
+    background-image: url(https://icon-library.net/images/white-money-icon/white-money-icon-0.jpg);
+    background-color: #313131;
+    background-size: 45px 45px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.game {
+    border-bottom-right-radius: 23px;
+    background-image: url(https://icon-library.net/images/controller-icon-white/controller-icon-white-24.jpg);
+    background-color: #313131;
+    background-size: 45px 30px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+/* HOVERING */
+.index:hover {
+    background: rgb(255, 205, 87);
+    border-bottom-left-radius: 23px;
+    background-image: url(https://icon-library.net/images/home-icon-png-white/home-icon-png-white-4.jpg);
+    background-size: 40px 40px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.pokeball:hover{
+    border:none;
+    background:red;
+    color: white;
+    background-image: url(https://toppng.com/public/uploads/thumbnail//okeball-graphic-by-maratuna-on-deviantart-banner-free-pokeball-icon-white-11563088134ll8ahuql0q.png);
+    background-size: 37px 37px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.move:hover {
+    border:none;
+    background: rgb(16, 170, 241);
+    color: white;
+    background-image: url(https://clip.cookdiary.net/sites/default/files/wallpaper/pikachu-clipart/192974/pikachu-clipart-png-icon-192974-8884874.png);
+    background-size: 45px 45px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.items:hover {
+    border:none;
+    background: rgb(238, 131, 60);
+    color: white;
+    background-image: url(https://icon-library.net/images/white-money-icon/white-money-icon-0.jpg);
+    background-size: 45px 45px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.game:hover {
+    border:none;
+    background: rgba(250, 13, 159, 0.884);
+    color: white;
+    background-image: url(https://icon-library.net/images/controller-icon-white/controller-icon-white-24.jpg);
+    background-size: 45px 30px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat; 
+}
+
+/* dropdown */
+.gen { 
+    position: relative;
+    display: inline-block;
+}
+
+.item_list {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;  
+}
+
+.dropdown a {
+    color: white;
+    height: 50px;
+    width: 206px;
+    text-decoration: none;
+    background: #313131;
+    display: block;
+    line-height: 50px;
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+}
+
+.dropdown a:hover {
+    color: white;
+    height: 60px;
+    width: 210px;
+    background: rgba(240, 40, 40, 0.856);
+
+}
+
+/* dropdown2 */
+.dropdown2 {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;  
+}
+
+.dropdown2 a {
+    color: white;
+    height: 50px;
+    width: 175px;
+    text-decoration: none;
+    background: #313131;
+    display: block;
+    line-height: 50px;
+    border-bottom: 1px solid orange;
+    border-top: 1px solid orange;
+
+}
+
+.dropdown2 a:hover {
+    color: white;
+    height: 60px;
+    width: 179px;
+    background: rgba(216, 131, 75, 0.856);
+
+}
+
+.gen:hover .dropdown {display: block;}
+.item_list:hover .dropdown2 {display: block;}
+
+/* line in button */
+/* HOME */
+.hHr {
+    margin-top: 25px;
+    margin-bottom: -30px;
+    border-color: rgb(255, 205, 87);
+    margin-left: -60%;
+    margin-right: -60%;
+}
+
+.index:hover  .hHr{
+    border-color: white;
+}
+
+/* POKEDEX */
+.pHr {
+    margin-top: 25px;
+    margin-bottom: -30px;
+    border-color: red;
+    margin-left: -40%;
+    margin-right: -40%;
+}
+
+.pokeball:hover  .pHr{
+    border-color: white;
+}
+
+/* MOVES */
+.mHr {
+    margin-top: 25px;
+    margin-bottom: -30px;
+    border-color: rgb(16, 170, 241);
+    margin-left: -50%;
+    margin-right: -50%;
+}
+
+.move:hover  .mHr{
+    border-color: white;
+}
+
+/* ITEMS */
+.iHr {
+    margin-top: 25px;
+    margin-bottom: -30px;
+    border-color: rgb(238, 131, 60);
+    margin-left: -60%;
+    margin-right: -60%;
+}
+
+.items:hover  .iHr{
+    border-color: white;
+}
+
+/* GAME */
+.gHr {
+    margin-top: 25px;
+    margin-bottom: -30px;
+    border-color: rgba(250, 13, 159, 0.884);
+    margin-left: -50%;
+    margin-right: -50%;
+}
+
+.game:hover  .gHr{
+    border-color: white;
+}
+
+.header{
+    position: fixed;
+}
