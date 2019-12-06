@@ -1,0 +1,54 @@
+h1{
+    font-size: 30px;
+    margin-top: -3%;
+}
+
+h4{ 
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 22px;
+
+}
+
+h3{
+    margin-left: 47%;
+}
+
+.backButton{
+    margin-left: -65%;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1; 
+    top: 16%;
+}
+
+.backButton button:hover {
+    color: rgba(250, 250, 11, 0.952);
+    font-size: 14px;
+}
+
+#gameInfo{
+    text-align: left;
+    margin-left: 18%;
+    margin-top: -5.5%;
+
+}
+
+p{
+    margin-left: 18%;
+    margin-right: 18%;
+    font-size: 18px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+th{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+ul li{
+    margin-left: 17%;
+    margin-right: 18%;
+    font-size: 16px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: normal;
+}
