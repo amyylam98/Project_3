@@ -28,8 +28,8 @@ h3{
 
 #gameInfo{
     text-align: left;
-    margin-left: 18%;
-    margin-top: -5.5%;
+    margin-left: 41%;
+    margin-top: 2%;
 
 }
 
@@ -43,6 +43,12 @@ p{
 th{
     font-weight: bold;
     font-size: 18px;
+    position: relative;
+    
+}
+
+td{
+    position: relative;
 }
 
 ul li{
@@ -52,3 +58,4 @@ ul li{
     font-family: Verdana, Geneva, sans-serif;
     font-weight: normal;
 }
+
