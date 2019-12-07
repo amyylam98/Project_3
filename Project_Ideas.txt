@@ -1,8 +1,0 @@
-Project 3 Ideas:
-
-Project 3 consists of making a website using an API or a data source.
-
-1. Game Related API (Pokemon (PokeAPI), Stardew (no API), ...)
-2. Food & Drink API
-3. Music/Lyric API 
-4. Travel (no API)
