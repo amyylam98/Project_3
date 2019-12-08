@@ -15,7 +15,6 @@
         "https://pokeapi.co/api/v2/item/", true);
         request.onload = function(){
           var data = JSON.parse(this.response);
-          // console.log(data);
           var results = data.results;
           var name = [];
           var url = [];
@@ -136,7 +135,7 @@
             <tr>
                 <th>2</th>
                 <td id=2></td>
-                <td id=name1>></td>
+                <td id=name1></td>
                 <td id=msg2></td>
                 <td id=cost2></td>
             </tr>
