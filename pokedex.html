@@ -35,7 +35,8 @@
                         for(var i = results.length - 1; i >= 0; i--){
                             console.log(img[i]);
                             
-                            document.getElementById("start").insertAdjacentHTML("afterend", "<td id = 'names'>" + name[i] + "</td>" 
+                            document.getElementById("start").insertAdjacentHTML("afterend", "<td id = 'names'>" 
+                                + "<a style='text-decoration:none; color: black;' href='plink.html'>" + name[i] + "<a></td>" 
                                 + "<td><img id = 'pimages' src=" + img[i] + " alt = pokemon></td>"); 
 
                         }
@@ -65,13 +66,12 @@
                     <a href="gen8.html">Gen VIII</a>
                 </div> -->
         </span>
-        <!-- <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a> -->
+        <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a>
         <span class="item_list">
           <a href="items.html"><button class="items"><br><br>Items<hr class="iHr"></button></a>
                 <div class="dropdown2">
                     <a href="balls.html">Pokeballs</a>
                     <a style="line-height: 40px;" href="battleItems.html">Battle Items</a>
-                    <a style="line-height: 40px;" href="generalItems.html">General Items</a>
                     <a href="holdItems.html">Hold Items</a>
                     <a href="medicine.html">Medicine</a>
                     <a href="stones.html">Stones</a>

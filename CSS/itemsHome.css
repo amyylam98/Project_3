@@ -4,12 +4,14 @@
     box-sizing: border-box;
   }
 
-  /* .center-on-page {
+  .center-on-page {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-  } */
+    transform: translate(-50%,40%);
+    /* width: 20%;
+    height: 20%; */
+  }
 
   /* Poké Styles */
   .pokeballanimate{
@@ -77,8 +79,31 @@
     100% { transform: translate(0, 0) rotate(0); }
   }
 
+figure.itemCategories{
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 20%;
+    margin-left: 5%;
+}
 
-
-
-
+.img img{
+  height: 50%;
+  width: 50%;
+  border: none;
+  margin-top: 10%;
+}
   
+.backButton{
+  margin-left: -65%;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1; 
+  top: 16%;
+}
+
+.backButton button:hover {
+  color: rgba(250, 250, 11, 0.952);
+  font-size: 14px;
+}

@@ -1,15 +1,32 @@
 #monsters{
     margin-left: 40%;
     margin-top: 5%;
+    text-decoration:none;
+    color: black;
 }
 
 #pimages{
     height: 150px;
     width: 150px;
     border: none;
+    text-decoration:none;
+    color: black;
 }
 
 #names{
     font-size: 25px;
     text-transform: capitalize;
+    text-decoration:none;
+    color: black;
+}
+
+table{
+     margin-top: -10%;
+}
+
+.movinginfo{
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 0;   
+
 }

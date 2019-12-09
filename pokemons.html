@@ -7,39 +7,39 @@
         <!-- CSS files for Pokedex -->
         <link type="text/css" rel="stylesheet" href = "CSS/Poke_stylesheet.css" media = "screen">
         <link type="text/css" rel="stylesheet" href = "CSS/menu.css" media = "screen">
-        <link type="text/css" rel="stylesheet" href = "CSS/pocketmonsters.css" media = "screen">
 
         <!-- JavaScript -->
         <script>
             var getPokemon = function(){
                 var request = new XMLHttpRequest();
-                request.open("GET", 
-                "https://pokeapi.co/api/v2/move?offset=0&limit=746", true);
+                request.open("GET", "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=5", true);
                 request.onload = function(){
                     var data = JSON.parse(this.response);
                     var results = data.results;
                     var name = [];
                     var url = [];
                     var img = [];
-                    var max = 5;
-
                     for(var i = 0; i < results.length; i++){
                         var obj = results[i];
                         name[i] = obj.name;
-                        url[i] = obj.url; 
-                    }
-                    
-                    print();
-
-                    function print(){
-                        for(var i = results.length - 1; i >= 0; i--){                          
-                            document.getElementById("start").insertAdjacentHTML("afterend", 
-                            "<td>" + [i+1] + "</td>" + "<td id = 'names'>" + "<a style='text-decoration:none; color: black;' href='https://pokemondb.net/move/" + name[i] + "'>" + name[i] + "<a>" + "</td>"); 
-
+                        url[i] = obj.url;
+                        request.open("GET", url[i]);
+                        request.onreadystatechange = function(){
+                            if(request.readyState === XMLHttpRequest.DONE && request.status === 200){
+                                var newdata = JSON.parse(request.responseText);
+                                request.onload = function(){
+                                    img[i] = newdata.sprites.front_default;
+                                    console.log(newdata);
+                                }
+                            }
                         }
+                        request.send();
+                    }
+                    for(var i = results.length-1; i >= 0; i--){
+                        document.getElementById("start").insertAdjacentHTML("afterend", "<td>" + name[i] + "</td>" + "<td> <img src=" + img[i] + " alt = 'pokemon'></td>");
                     }
                 };
-                request.send();
+            request.send();
             }
         </script>
 
@@ -51,7 +51,7 @@
         <a href="index.html"><button class="index"><br><br>Home<hr class="hHr"></button></a>
         <span class="gen">
           <a href="pokedex.html"><button class="pokeball"><br><br>Pokédex<hr class="pHr"></button></a>
-                <!-- <div class="dropdown">
+                <div class="dropdown">
                     <a href="all.html">All</a>
                     <a href="gen1.html">Gen I</a>
                     <a href="gen2.html">Gen II</a>
@@ -61,7 +61,7 @@
                     <a href="gen6.html">Gen VI</a>
                     <a href="gen7.html">Gen VII</a>
                     <a href="gen8.html">Gen VIII</a>
-                </div> -->
+                </div>
         </span>
         <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a>
         <span class="item_list">
@@ -69,6 +69,7 @@
                 <div class="dropdown2">
                     <a href="balls.html">Pokeballs</a>
                     <a style="line-height: 40px;" href="battleItems.html">Battle Items</a>
+                    <a style="line-height: 40px;" href="generalItems.html">General Items</a>
                     <a href="holdItems.html">Hold Items</a>
                     <a href="medicine.html">Medicine</a>
                     <a href="stones.html">Stones</a>
@@ -77,21 +78,23 @@
                 </div>
         </span>
         <a href="games.html"><button class="game"><br><br>Games<hr class="gHr"></button></a>
-      </ul>  
+      </ul>
       <hr class="movingLine">
     </div>
     <hr style="border-color: white;">
-    
+
     <!-- Insert Pokemon -->
-    <table id = "monsters">
+    <table>
         <thread>
+            <br>
+            <br>
+            <br>
             <tr>
-                <th>Number#</th>
-                <th id = "names">Move Name</th>
+                <th>Pokemon Name</th>
+                <th>Image</th>
             </tr>
-            <tr id = "start"> 
+            <tr id = "start">
             </tr>
-            
         </thread>
     </table>
 
