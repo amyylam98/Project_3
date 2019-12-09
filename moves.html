@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Pokemon</title>
-    <link type="text/css" rel="stylesheet" href = "CSS/Poke_stylesheet.css" media = "screen">
-    <link type="text/css" rel="stylesheet" href = "CSS/menu.css" media = "screen">
-  </head>
-  
-  <body>
+    <head>
+
+        <meta charset="utf-8">
+        <title>Pokemon</title>
+        <!-- CSS files for Pokedex -->
+        <link type="text/css" rel="stylesheet" href = "CSS/Poke_stylesheet.css" media = "screen">
+        <link type="text/css" rel="stylesheet" href = "CSS/menu.css" media = "screen">
+        <link type="text/css" rel="stylesheet" href = "CSS/pocketmonsters.css" media = "screen">
+
+        <!-- JavaScript -->
+        <script>
+            var getPokemon = function(){
+                var request = new XMLHttpRequest();
+                request.open("GET", 
+                "https://pokeapi.co/api/v2/move?offset=0&limit=746", true);
+                request.onload = function(){
+                    var data = JSON.parse(this.response);
+                    var results = data.results;
+                    var name = [];
+                    var url = [];
+                    var img = [];
+                    var max = 5;
+
+                    for(var i = 0; i < results.length; i++){
+                        var obj = results[i];
+                        name[i] = obj.name;
+                        url[i] = obj.url; 
+                    }
+                    
+                    print();
+
+                    function print(){
+                        for(var i = results.length - 1; i >= 0; i--){                          
+                            document.getElementById("start").insertAdjacentHTML("afterend", 
+                            "<td>" + [i+1] + "</td>" + "<td id = 'names'>" + "<a style='text-decoration:none; color: black;' href='https://pokemondb.net/move/" + name[i] + "'>" + name[i] + "<a>" + "</td>"); 
+
+                        }
+                    }
+                };
+                request.send();
+            }
+        </script>
+
+    </head>
+    <body onload = "getPokemon()">
       <div id="mainPage"></div>
       <div class="header">
       <ul>
@@ -44,6 +81,19 @@
       <hr class="movingLine">
     </div>
     <hr style="border-color: white;">
+    
+    <!-- Insert Pokemon -->
+    <table id = "monsters">
+        <thread>
+            <tr>
+                <th>Number#</th>
+                <th id = "names">Move Name</th>
+            </tr>
+            <tr id = "start"> 
+            </tr>
+            
+        </thread>
+    </table>
 
-  </body>
+    </body>
 </html>
