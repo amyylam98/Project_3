@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Poke Balls</title>
+    <title>Pokemon</title>
     <link type="text/css" rel="stylesheet" href = "CSS/pokeball.css" media = "screen">
     <link type="text/css" rel="stylesheet" href = "CSS/Poke_stylesheet.css" media = "screen">
     <link type="text/css" rel="stylesheet" href = "CSS/menu.css" media = "screen">
@@ -12,14 +12,15 @@
       var getItem = function(){ 
         var request = new XMLHttpRequest();
         request.open("GET", 
-        "https://pokeapi.co/api/v2/item/", true);
+        "https://pokeapi.co/api/v2/item-category/10/", true);
         request.onload = function(){
           var data = JSON.parse(this.response);
-          var results = data.results;
+          var items = data.items;
           var name = [];
           var url = [];
-          for(var i = 0; i < 16; i++){
-            var obj = results[i];
+          var max = 21;
+          for(var i = 0; i < max; i++){
+            var obj = items[i];
             name[i] = obj.name;
             url[i] = obj.url;
             document.getElementById("name"+[i]).innerHTML=name[i];
@@ -28,10 +29,10 @@
             var j = 0;    
             var req = new XMLHttpRequest();
             req.onreadystatechange = function(){
-              if(req.readyState == 3 && req.status == 200){
+              if(req.readyState == 4 && req.status == 200){
                 var newData = JSON.parse(req.responseText);
                 icon(newData);
-                if(j != 16){
+                if(j != max){
                   req.open("GET", url[j], true);
                   req.send();
                 }
@@ -76,7 +77,7 @@
         <a href="index.html"><button class="index"><br><br>Home<hr class="hHr"></button></a>
         <span class="gen">
           <a href="pokedex.html"><button class="pokeball"><br><br>Pokédex<hr class="pHr"></button></a>
-                <!-- <div class="dropdown">
+                <div class="dropdown">
                     <a href="all.html">All</a>
                     <a href="gen1.html">Gen I</a>
                     <a href="gen2.html">Gen II</a>
@@ -86,9 +87,9 @@
                     <a href="gen6.html">Gen VI</a>
                     <a href="gen7.html">Gen VII</a>
                     <a href="gen8.html">Gen VIII</a>
-                </div> -->
+                </div>
         </span>
-        <!-- <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a> -->
+        <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a>
         <span class="item_list">
           <a href="items.html"><button class="items"><br><br>Items<hr class="iHr"></button></a>
                 <div class="dropdown2">
@@ -124,7 +125,7 @@
               <th>Cost</th>
             </tr>
 
-            <tr>
+             <tr>
                 <th>1</th>
                 <td id=1></td>
                 <td id=name0></td>
@@ -236,7 +237,41 @@
                 <td id=msg16></td>
                 <td id=cost16></td>
             </tr>
-
+            <tr>
+                <th>17</th>
+                <td id=17></td>
+                <td id=name16></td>
+                <td id=msg17></td>
+                <td id=cost17></td>
+            </tr>
+            <tr>
+                <th>18</th>
+                <td id=18></td>
+                <td id=name17></td>
+                <td id=msg18></td>
+                <td id=cost18></td>
+            </tr>
+            <tr>
+                <th>19</th>
+                <td id=19></td>
+                <td id=name18></td>
+                <td id=msg19></td>
+                <td id=cost19></td>
+            </tr>
+            <tr>
+                <th>20</th>
+                <td id=20></td>
+                <td id=name19></td>
+                <td id=msg20></td>
+                <td id=cost20></td>
+            </tr>
+            <tr>
+                <th>21</th>
+                <td id=21></td>
+                <td id=name20></td>
+                <td id=msg21></td>
+                <td id=cost21></td>
+            </tr>
             
         </thread>
     </table>

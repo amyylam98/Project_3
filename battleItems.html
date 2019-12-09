@@ -2,12 +2,75 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Pokémon</title>
+    <title>Pokemon</title>
+    <link type="text/css" rel="stylesheet" href = "CSS/pokeball.css" media = "screen">
     <link type="text/css" rel="stylesheet" href = "CSS/Poke_stylesheet.css" media = "screen">
     <link type="text/css" rel="stylesheet" href = "CSS/menu.css" media = "screen">
+    
+
+    <script>
+      var getItem = function(){ 
+        var request = new XMLHttpRequest();
+        request.open("GET", 
+        "https://pokeapi.co/api/v2/item/?offset=0&limit=954 ", true);
+        request.onload = function(){
+          var data = JSON.parse(this.response);
+          var results = data.results;
+          var name = [];
+          var url = [];
+          var max = 62;
+          for(var i = 54; i < max; i++){
+            var obj = results[i];
+            name[i] = obj.name;
+            url[i] = obj.url;
+            document.getElementById("name"+[i]).innerHTML=name[i];
+          }
+
+            var j = 54;    
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+              if(req.readyState == 4 && req.status == 200){
+                var newData = JSON.parse(req.responseText);
+                icon(newData);
+                if(j != max){
+                  req.open("GET", url[j], true);
+                  req.send();
+                }
+                j++;
+              }
+            };
+
+            function icon(data){
+              //icon
+              var iconImg = "<img style='height: 30px; width: 30px;"
+              + "border: none;' src=";
+              iconImg += data.sprites.default+">";
+              document.getElementById(j).innerHTML=iconImg;
+
+              //text
+              var msg = "";
+              msg += data.flavor_text_entries[2].text;
+              document.getElementById("msg"+j).innerHTML=msg;
+
+              //cost
+              var cost = "₽";     
+              cost += data.cost;
+              document.getElementById("cost"+j).innerHTML=cost;
+
+            }
+            req.open("GET", url[j], true);
+            req.send();
+
+
+        };
+        request.send();
+      }
+    </script>
+
   </head>
   
-  <body>
+  <body onload = "getItem()" >
+    <!-- <body> -->
       <div id="mainPage"></div>
       <div class="header">
       <ul>
@@ -32,7 +95,6 @@
                 <div class="dropdown2">
                     <a href="balls.html">Pokeballs</a>
                     <a style="line-height: 40px;" href="battleItems.html">Battle Items</a>
-                    <a style="line-height: 40px;" href="generalItems.html">General Items</a>
                     <a href="holdItems.html">Hold Items</a>
                     <a href="medicine.html">Medicine</a>
                     <a href="stones.html">Stones</a>
@@ -45,6 +107,87 @@
       <hr class="movingLine">
     </div>
     <hr style="border-color: white;">
+
+  <!-- --------------------- -->
+  <p style="visibility: hidden;" id=54></p>
+  <p style="visibility: hidden;" id=msg54></p>
+  <p style="visibility: hidden;" id=cost54></p>
+
+  <br>
+  <br>
+    <table>
+        <thread>
+            <tr>
+              <th></th>
+              <th>Icon</th>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Cost</th>
+            </tr>
+
+            <tr>
+                <th>1</th>
+                <td id=55></td>
+                <td id=name54></td>
+                <td id=msg55></td>
+                <td id=cost55></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td id=56></td>
+                <td id=name55></td>
+                <td id=msg56></td>
+                <td id=cost56></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td id=57></td>
+                <td id=name56></td>
+                <td id=msg57></td>
+                <td id=cost57></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td id=58></td>
+                <td id=name57></td>
+                <td id=msg58></td>
+                <td id=cost58></td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td id=59></td>
+                <td id=name58></td>
+                <td id=msg59></td>
+                <td id=cost59></td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td id=60></td>
+                <td id=name59></td>
+                <td id=msg60></td>
+                <td id=cost60></td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td id=61></td>
+                <td id=name60></td>
+                <td id=msg61></td>
+                <td id=cost61></td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td id=62></td>
+                <td id=name61></td>
+                <td id=msg62></td>
+                <td id=cost62></td>
+            </tr>
+            
+            
+
+            
+        </thread>
+    </table>
+
 
   </body>
 </html>

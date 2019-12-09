@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon</title>
+    <link type="text/css" rel="stylesheet" href = "CSS/pokeball.css" media = "screen">
+    <link type="text/css" rel="stylesheet" href = "CSS/Poke_stylesheet.css" media = "screen">
+    <link type="text/css" rel="stylesheet" href = "CSS/menu.css" media = "screen">
+    
+
+    <script>
+      var getItem = function(){ 
+        var request = new XMLHttpRequest();
+        request.open("GET", 
+        "https://pokeapi.co/api/v2/item/?offset=0&limit=954", true);
+        request.onload = function(){
+          var data = JSON.parse(this.response);
+          var results = data.results;
+          var name = [];
+          var url = [];
+          var max = 404;
+          for(var i = 304; i < max; i++){
+            var obj = results[i];
+            name[i] = obj.name;
+            url[i] = obj.url;
+            document.getElementById("name"+[i]).innerHTML=name[i];
+          }
+
+            var j = 304;    
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+              if(req.readyState == 3 && req.status == 200){
+                var newData = JSON.parse(req.responseText);
+                icon(newData);
+                if(j != max){
+                  req.open("GET", url[j], true);
+                  req.send();
+                }
+                j++;
+              }
+            };
+
+            function icon(data){
+              //icon
+              var iconImg = "<img style='height: 30px; width: 30px;"
+              + "border: none;' src=";
+              iconImg += "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png"+">";
+              document.getElementById(j).innerHTML=iconImg;
+
+              //text
+              var msg = "";
+              msg += data.flavor_text_entries[2].text;
+              document.getElementById("msg"+j).innerHTML=msg;
+
+              //cost
+              var cost = "₽";     
+              cost += data.cost;
+              document.getElementById("cost"+j).innerHTML=cost;
+
+            }
+            req.open("GET", url[j], true);
+            req.send();
+
+
+        };
+        request.send();
+      }
+    </script>
+
+  </head>
+  
+  <body onload = "getItem()" >
+    <!-- <body> -->
+      <div id="mainPage"></div>
+      <div class="header">
+      <ul>
+        <a href="index.html"><button class="index"><br><br>Home<hr class="hHr"></button></a>
+        <span class="gen">
+          <a href="pokedex.html"><button class="pokeball"><br><br>Pokédex<hr class="pHr"></button></a>
+                <div class="dropdown">
+                    <a href="all.html">All</a>
+                    <a href="gen1.html">Gen I</a>
+                    <a href="gen2.html">Gen II</a>
+                    <a href="gen3.html">Gen III</a>
+                    <a href="gen4.html">Gen IV</a>
+                    <a href="gen5.html">Gen V</a>
+                    <a href="gen6.html">Gen VI</a>
+                    <a href="gen7.html">Gen VII</a>
+                    <a href="gen8.html">Gen VIII</a>
+                </div>
+        </span>
+        <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a>
+        <span class="item_list">
+          <a href="items.html"><button class="items"><br><br>Items<hr class="iHr"></button></a>
+                <div class="dropdown2">
+                    <a href="balls.html">Pokeballs</a>
+                    <a style="line-height: 40px;" href="battleItems.html">Battle Items</a>
+                    <a href="holdItems.html">Hold Items</a>
+                    <a href="medicine.html">Medicine</a>
+                    <a href="stones.html">Stones</a>
+                    <a href="berries.html">Berries</a>
+                    <a href="HM.html">HM</a>
+                </div>
+        </span>
+        <a href="games.html"><button class="game"><br><br>Games<hr class="gHr"></button></a>
+      </ul>  
+      <hr class="movingLine">
+    </div>
+    <hr style="border-color: white;">
+
+  <!-- --------------------- -->
+  <p style="visibility: hidden;" id=304></p>
+  <p style="visibility: hidden;" id=msg304></p>
+  <p style="visibility: hidden;" id=cost304></p>
+
+  <br>
+  <br>
+    <table>
+        <thread>
+            <tr>
+              <th></th>
+              <th>Icon</th>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Cost</th>
+            </tr>
+
+            <tr>
+                <th>1</th>
+                <td id=305></td>
+                <td id=name304></td>
+                <td id=msg305></td>
+                <td id=cost305></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td id=306></td>
+                <td id=name305></td>
+                <td id=msg306></td>
+                <td id=cost306></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td id=307></td>
+                <td id=name306>></td>
+                <td id=msg307></td>
+                <td id=cost307></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td id=308></td>
+                <td id=name307></td>
+                <td id=msg308></td>
+                <td id=cost308></td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td id=309></td>
+                <td id=name308></td>
+                <td id=msg309></td>
+                <td id=cost309></td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td id=310></td>
+                <td id=name309></td>
+                <td id=msg310></td>
+                <td id=cost310></td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td id=311></td>
+                <td id=name310></td>
+                <td id=msg311></td>
+                <td id=cost311></td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td id=312></td>
+                <td id=name311></td>
+                <td id=msg312></td>
+                <td id=cost312></td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td id=313></td>
+                <td id=name312></td>
+                <td id=msg313></td>
+                <td id=cost313></td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td id=314></td>
+                <td id=name313></td>
+                <td id=msg314></td>
+                <td id=cost314></td>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td id=315></td>
+                <td id=name314></td>
+                <td id=msg315></td>
+                <td id=cost315></td>
+            </tr>
+            <tr>
+                <th>12</th>
+                <td id=316></td>
+                <td id=name315></td>
+                <td id=msg316></td>
+                <td id=cost316></td>
+            </tr>
+            <tr>
+                <th>13</th>
+                <td id=317></td>
+                <td id=name316></td>
+                <td id=msg317></td>
+                <td id=cost317></td>
+            </tr>
+            <tr>
+                <th>14</th>
+                <td id=318></td>
+                <td id=name317></td>
+                <td id=msg318></td>
+                <td id=cost318></td>
+            </tr>
+            <tr>
+                <th>15</th>
+                <td id=319></td>
+                <td id=name318></td>
+                <td id=msg319></td>
+                <td id=cost319></td>
+            </tr>
+            <tr>
+                <th>16</th>
+                <td id=320></td>
+                <td id=name319></td>
+                <td id=msg320></td>
+                <td id=cost320></td>
+            </tr>
+            <tr>
+                <th>17</th>
+                <td id=321></td>
+                <td id=name320></td>
+                <td id=msg321></td>
+                <td id=cost321></td>
+            </tr>
+            <tr>
+                <th>18</th>
+                <td id=322></td>
+                <td id=name321></td>
+                <td id=msg322></td>
+                <td id=cost322></td>
+            </tr>
+            <tr>
+                <th>19</th>
+                <td id=323></td>
+                <td id=name322></td>
+                <td id=msg323></td>
+                <td id=cost323></td>
+            </tr>
+            <tr>
+                <th>20</th>
+                <td id=324></td>
+                <td id=name323></td>
+                <td id=msg324></td>
+                <td id=cost324></td>
+            </tr>
+            <tr>
+                <th>21</th>
+                <td id=325></td>
+                <td id=name324></td>
+                <td id=msg325></td>
+                <td id=cost325></td>
+            </tr>
+            <tr>
+                <th>22</th>
+                <td id=326></td>
+                <td id=name325></td>
+                <td id=msg326></td>
+                <td id=cost326></td>
+            </tr>
+            <tr>
+                <th>23</th>
+                <td id=327></td>
+                <td id=name326></td>
+                <td id=msg327></td>
+                <td id=cost327></td>
+            </tr>
+            <tr>
+                <th>24</th>
+                <td id=328></td>
+                <td id=name327></td>
+                <td id=msg328></td>
+                <td id=cost328></td>
+            </tr>
+            <tr>
+                <th>25</th>
+                <td id=329></td>
+                <td id=name328></td>
+                <td id=msg329></td>
+                <td id=cost329></td>
+            </tr>
+            <tr>
+                <th>26</th>
+                <td id=330></td>
+                <td id=name329></td>
+                <td id=msg330></td>
+                <td id=cost330></td>
+            </tr>
+            <tr>
+                <th>27</th>
+                <td id=331></td>
+                <td id=name330></td>
+                <td id=msg331></td>
+                <td id=cost331></td>
+            </tr>
+            <tr>
+                <th>28</th>
+                <td id=332></td>
+                <td id=name331></td>
+                <td id=msg332></td>
+                <td id=cost332></td>
+            </tr>
+            <tr>
+                <th>29</th>
+                <td id=333></td>
+                <td id=name332></td>
+                <td id=msg333></td>
+                <td id=cost333></td>
+            </tr>
+            <tr>
+                <th>30</th>
+                <td id=334></td>
+                <td id=name333></td>
+                <td id=msg334></td>
+                <td id=cost334></td>
+            </tr>
+            <tr>
+                <th>31</th>
+                <td id=335></td>
+                <td id=name334></td>
+                <td id=msg335></td>
+                <td id=cost335></td>
+            </tr>
+            <tr>
+                <th>32</th>
+                <td id=336></td>
+                <td id=name335></td>
+                <td id=msg336></td>
+                <td id=cost336></td>
+            </tr>
+            <tr>
+                <th>33</th>
+                <td id=337></td>
+                <td id=name336></td>
+                <td id=msg337></td>
+                <td id=cost337></td>
+            </tr>
+            <tr>
+                <th>34</th>
+                <td id=338></td>
+                <td id=name337></td>
+                <td id=msg338></td>
+                <td id=cost338></td>
+            </tr>
+            <tr>
+                <th>35</th>
+                <td id=339></td>
+                <td id=name338></td>
+                <td id=msg339></td>
+                <td id=cost339></td>
+            </tr>
+            <tr>
+                <th>36</th>
+                <td id=340></td>
+                <td id=name339></td>
+                <td id=msg340></td>
+                <td id=cost340></td>
+            </tr>
+            <tr>
+                <th>37</th>
+                <td id=341></td>
+                <td id=name340></td>
+                <td id=msg341></td>
+                <td id=cost341></td>
+            </tr>
+            <tr>
+                <th>38</th>
+                <td id=342></td>
+                <td id=name341></td>
+                <td id=msg342></td>
+                <td id=cost342></td>
+            </tr>
+            <tr>
+                <th>39</th>
+                <td id=343></td>
+                <td id=name342></td>
+                <td id=msg343></td>
+                <td id=cost343></td>
+            </tr>
+            <tr>
+                <th>40</th>
+                <td id=344></td>
+                <td id=name343></td>
+                <td id=msg344></td>
+                <td id=cost344></td>
+            </tr>
+            <tr>
+                <th>41</th>
+                <td id=345></td>
+                <td id=name344></td>
+                <td id=msg345></td>
+                <td id=cost345></td>
+            </tr>
+            <tr>
+                <th>42</th>
+                <td id=346></td>
+                <td id=name345></td>
+                <td id=msg346></td>
+                <td id=cost346></td>
+            </tr>
+            <tr>
+                <th>43</th>
+                <td id=347></td>
+                <td id=name346></td>
+                <td id=msg347></td>
+                <td id=cost347></td>
+            </tr>
+            <tr>
+                <th>44</th>
+                <td id=348></td>
+                <td id=name347></td>
+                <td id=msg348></td>
+                <td id=cost348></td>
+            </tr>
+            <tr>
+                <th>45</th>
+                <td id=349></td>
+                <td id=name348></td>
+                <td id=msg349></td>
+                <td id=cost349></td>
+            </tr>
+            <tr>
+                <th>46</th>
+                <td id=350></td>
+                <td id=name349></td>
+                <td id=msg350></td>
+                <td id=cost350></td>
+            </tr>
+            <tr>
+                <th>47</th>
+                <td id=351></td>
+                <td id=name350></td>
+                <td id=msg351></td>
+                <td id=cost351></td>
+            </tr>
+            <tr>
+                <th>48</th>
+                <td id=352></td>
+                <td id=name351></td>
+                <td id=msg352></td>
+                <td id=cost352></td>
+            </tr>
+            <tr>
+                <th>49</th>
+                <td id=353></td>
+                <td id=name352></td>
+                <td id=msg353></td>
+                <td id=cost353></td>
+            </tr>
+            <tr>
+                <th>50</th>
+                <td id=354></td>
+                <td id=name353></td>
+                <td id=msg354></td>
+                <td id=cost354></td>
+            </tr>
+            <tr>
+                <th>51</th>
+                <td id=355></td>
+                <td id=name354></td>
+                <td id=msg355></td>
+                <td id=cost355></td>
+            </tr>
+            <tr>
+                <th>52</th>
+                <td id=356></td>
+                <td id=name355></td>
+                <td id=msg356></td>
+                <td id=cost356></td>
+            </tr>
+            <tr>
+                <th>53</th>
+                <td id=357></td>
+                <td id=name356></td>
+                <td id=msg357></td>
+                <td id=cost357></td>
+            </tr>
+            <tr>
+                <th>54</th>
+                <td id=358></td>
+                <td id=name357></td>
+                <td id=msg358></td>
+                <td id=cost358></td>
+            </tr>
+            <tr>
+                <th>55</th>
+                <td id=359></td>
+                <td id=name358></td>
+                <td id=msg359></td>
+                <td id=cost359></td>
+            </tr>
+            <tr>
+                <th>56</th>
+                <td id=360></td>
+                <td id=name359></td>
+                <td id=msg360></td>
+                <td id=cost360></td>
+            </tr>
+            <tr>
+                <th>57</th>
+                <td id=361></td>
+                <td id=name360></td>
+                <td id=msg361></td>
+                <td id=cost361></td>
+            </tr>
+            <tr>
+                <th>58</th>
+                <td id=362></td>
+                <td id=name361></td>
+                <td id=msg362></td>
+                <td id=cost362></td>
+            </tr>
+            <tr>
+                <th>59</th>
+                <td id=363></td>
+                <td id=name362></td>
+                <td id=msg363></td>
+                <td id=cost363></td>
+            </tr>
+            <tr>
+                <th>60</th>
+                <td id=364></td>
+                <td id=name363></td>
+                <td id=msg364></td>
+                <td id=cost364></td>
+            </tr>
+            <tr>
+                <th>61</th>
+                <td id=365></td>
+                <td id=name364></td>
+                <td id=msg365></td>
+                <td id=cost365></td>
+            </tr>
+            <tr>
+                <th>62</th>
+                <td id=366></td>
+                <td id=name365></td>
+                <td id=msg366></td>
+                <td id=cost366></td>
+            </tr>
+            <tr>
+                <th>63</th>
+                <td id=367></td>
+                <td id=name366></td>
+                <td id=msg367></td>
+                <td id=cost367></td>
+            </tr>
+            <tr>
+                <th>64</th>
+                <td id=368></td>
+                <td id=name367></td>
+                <td id=msg368></td>
+                <td id=cost368></td>
+            </tr>
+            <tr>
+                <th>65</th>
+                <td id=369></td>
+                <td id=name368></td>
+                <td id=msg369></td>
+                <td id=cost369></td>
+            </tr>
+            <tr>
+                <th>66</th>
+                <td id=370></td>
+                <td id=name369></td>
+                <td id=msg370></td>
+                <td id=cost370></td>
+            </tr>
+            <tr>
+                <th>67</th>
+                <td id=371></td>
+                <td id=name370></td>
+                <td id=msg371></td>
+                <td id=cost371></td>
+            </tr>
+            <tr>
+                <th>68</th>
+                <td id=372></td>
+                <td id=name371></td>
+                <td id=msg372></td>
+                <td id=cost372></td>
+            </tr>
+            <tr>
+                <th>69</th>
+                <td id=373></td>
+                <td id=name372></td>
+                <td id=msg373></td>
+                <td id=cost373></td>
+            </tr>
+            <tr>
+                <th>70</th>
+                <td id=374></td>
+                <td id=name373></td>
+                <td id=msg374></td>
+                <td id=cost374></td>
+            </tr>
+            <tr>
+                <th>71</th>
+                <td id=375></td>
+                <td id=name374></td>
+                <td id=msg375></td>
+                <td id=cost375></td>
+            </tr>
+            <tr>
+                <th>72</th>
+                <td id=376></td>
+                <td id=name375></td>
+                <td id=msg376></td>
+                <td id=cost376></td>
+            </tr>
+            <tr>
+                <th>73</th>
+                <td id=377></td>
+                <td id=name376></td>
+                <td id=msg377></td>
+                <td id=cost377></td>
+            </tr>
+            <tr>
+                <th>74</th>
+                <td id=378></td>
+                <td id=name377></td>
+                <td id=msg378></td>
+                <td id=cost378></td>
+            </tr>
+            <tr>
+                <th>75</th>
+                <td id=379></td>
+                <td id=name378></td>
+                <td id=msg379></td>
+                <td id=cost379></td>
+            </tr>
+            <tr>
+                <th>76</th>
+                <td id=380></td>
+                <td id=name379></td>
+                <td id=msg380></td>
+                <td id=cost380></td>
+            </tr>
+            <tr>
+                <th>77</th>
+                <td id=381></td>
+                <td id=name380></td>
+                <td id=msg381></td>
+                <td id=cost381></td>
+            </tr>
+            <tr>
+                <th>78</th>
+                <td id=382></td>
+                <td id=name381></td>
+                <td id=msg382></td>
+                <td id=cost382></td>
+            </tr>
+            <tr>
+                <th>79</th>
+                <td id=383></td>
+                <td id=name382></td>
+                <td id=msg383></td>
+                <td id=cost383></td>
+            </tr>
+            <tr>
+                <th>80</th>
+                <td id=384></td>
+                <td id=name383></td>
+                <td id=msg384></td>
+                <td id=cost384></td>
+            </tr>
+            <tr>
+                <th>81</th>
+                <td id=385></td>
+                <td id=name384></td>
+                <td id=msg385></td>
+                <td id=cost385></td>
+            </tr>
+            <tr>
+                <th>82</th>
+                <td id=386></td>
+                <td id=name385></td>
+                <td id=msg386></td>
+                <td id=cost386></td>
+            </tr>
+            <tr>
+                <th>83</th>
+                <td id=387></td>
+                <td id=name386></td>
+                <td id=msg387></td>
+                <td id=cost387></td>
+            </tr>
+            <tr>
+                <th>84</th>
+                <td id=388></td>
+                <td id=name387></td>
+                <td id=msg388></td>
+                <td id=cost388></td>
+            </tr>
+            <tr>
+                <th>85</th>
+                <td id=389></td>
+                <td id=name388></td>
+                <td id=msg389></td>
+                <td id=cost389></td>
+            </tr>
+            <tr>
+                <th>86</th>
+                <td id=390></td>
+                <td id=name389></td>
+                <td id=msg390></td>
+                <td id=cost390></td>
+            </tr>
+            <tr>
+                <th>87</th>
+                <td id=391></td>
+                <td id=name390></td>
+                <td id=msg391></td>
+                <td id=cost391></td>
+            </tr>
+            <tr>
+                <th>88</th>
+                <td id=392></td>
+                <td id=name391></td>
+                <td id=msg392></td>
+                <td id=cost392></td>
+            </tr>
+            <tr>
+                <th>89</th>
+                <td id=393></td>
+                <td id=name392></td>
+                <td id=msg393></td>
+                <td id=cost393></td>
+            </tr>
+            <tr>
+                <th>90</th>
+                <td id=394></td>
+                <td id=name393></td>
+                <td id=msg394></td>
+                <td id=cost394></td>
+            </tr>
+            <tr>
+                <th>91</th>
+                <td id=395></td>
+                <td id=name394></td>
+                <td id=msg395></td>
+                <td id=cost395></td>
+            </tr>
+            <tr>
+                <th>92</th>
+                <td id=396></td>
+                <td id=name395></td>
+                <td id=msg396></td>
+                <td id=cost396></td>
+            </tr>
+            <tr>
+                <th>93</th>
+                <td id=397></td>
+                <td id=name396></td>
+                <td id=msg397></td>
+                <td id=cost397></td>
+            </tr>
+            <tr>
+                <th>94</th>
+                <td id=398></td>
+                <td id=name397></td>
+                <td id=msg398></td>
+                <td id=cost398></td>
+            </tr>
+            <tr>
+                <th>95</th>
+                <td id=399></td>
+                <td id=name398></td>
+                <td id=msg399></td>
+                <td id=cost399></td>
+            </tr>
+            <tr>
+                <th>96</th>
+                <td id=400></td>
+                <td id=name399></td>
+                <td id=msg400></td>
+                <td id=cost400></td>
+            </tr>
+            <tr>
+                <th>97</th>
+                <td id=401></td>
+                <td id=name400></td>
+                <td id=msg401></td>
+                <td id=cost401></td>
+            </tr>
+            <tr>
+                <th>98</th>
+                <td id=402></td>
+                <td id=name401></td>
+                <td id=msg402></td>
+                <td id=cost402></td>
+            </tr>
+            <tr>
+                <th>99</th>
+                <td id=403></td>
+                <td id=name402></td>
+                <td id=msg403></td>
+                <td id=cost403></td>
+            </tr>
+            <tr>
+                <th>100</th>
+                <td id=404></td>
+                <td id=name403></td>
+                <td id=msg404></td>
+                <td id=cost404></td>
+            </tr>
+            
+
+
+
+            
+        </thread>
+    </table>
+
+
+  </body>
+</html>
