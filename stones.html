@@ -12,21 +12,21 @@
       var getItem = function(){ 
         var request = new XMLHttpRequest();
         request.open("GET", 
-        "https://pokeapi.co/api/v2/item/?offset=0&limit=954 ", true);
+        "https://pokeapi.co/api/v2/item-category/10/", true);
         request.onload = function(){
           var data = JSON.parse(this.response);
-          var results = data.results;
+          var items = data.items;
           var name = [];
           var url = [];
-          var max = 62;
-          for(var i = 54; i < max; i++){
-            var obj = results[i];
+          var max = 21;
+          for(var i = 0; i < max; i++){
+            var obj = items[i];
             name[i] = obj.name;
             url[i] = obj.url;
             document.getElementById("name"+[i]).innerHTML=name[i];
           }
 
-            var j = 54;    
+            var j = 0;    
             var req = new XMLHttpRequest();
             req.onreadystatechange = function(){
               if(req.readyState == 4 && req.status == 200){
@@ -77,7 +77,7 @@
         <a href="index.html"><button class="index"><br><br>Home<hr class="hHr"></button></a>
         <span class="gen">
           <a href="pokedex.html"><button class="pokeball"><br><br>Pokédex<hr class="pHr"></button></a>
-                <!-- <div class="dropdown">
+                <div class="dropdown">
                     <a href="all.html">All</a>
                     <a href="gen1.html">Gen I</a>
                     <a href="gen2.html">Gen II</a>
@@ -87,7 +87,7 @@
                     <a href="gen6.html">Gen VI</a>
                     <a href="gen7.html">Gen VII</a>
                     <a href="gen8.html">Gen VIII</a>
-                </div> -->
+                </div>
         </span>
         <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a>
         <span class="item_list">
@@ -109,9 +109,9 @@
     <hr style="border-color: white;">
 
   <!-- --------------------- -->
-  <p style="visibility: hidden;" id=54></p>
-  <p style="visibility: hidden;" id=msg54></p>
-  <p style="visibility: hidden;" id=cost54></p>
+  <p style="visibility: hidden;" id=0></p>
+  <p style="visibility: hidden;" id=msg0></p>
+  <p style="visibility: hidden;" id=cost0></p>
 
   <br>
   <br>
@@ -125,65 +125,153 @@
               <th>Cost</th>
             </tr>
 
-            <tr>
+             <tr>
                 <th>1</th>
-                <td id=55></td>
-                <td id=name54></td>
-                <td id=msg55></td>
-                <td id=cost55></td>
+                <td id=1></td>
+                <td id=name0></td>
+                <td id=msg1></td>
+                <td id=cost1></td>
             </tr>
             <tr>
                 <th>2</th>
-                <td id=56></td>
-                <td id=name55></td>
-                <td id=msg56></td>
-                <td id=cost56></td>
+                <td id=2></td>
+                <td id=name1></td>
+                <td id=msg2></td>
+                <td id=cost2></td>
             </tr>
             <tr>
                 <th>3</th>
-                <td id=57></td>
-                <td id=name56></td>
-                <td id=msg57></td>
-                <td id=cost57></td>
+                <td id=3></td>
+                <td id=name2></td>
+                <td id=msg3></td>
+                <td id=cost3></td>
             </tr>
             <tr>
                 <th>4</th>
-                <td id=58></td>
-                <td id=name57></td>
-                <td id=msg58></td>
-                <td id=cost58></td>
+                <td id=4></td>
+                <td id=name3></td>
+                <td id=msg4></td>
+                <td id=cost4></td>
             </tr>
             <tr>
                 <th>5</th>
-                <td id=59></td>
-                <td id=name58></td>
-                <td id=msg59></td>
-                <td id=cost59></td>
+                <td id=5></td>
+                <td id=name4></td>
+                <td id=msg5></td>
+                <td id=cost5></td>
             </tr>
             <tr>
                 <th>6</th>
-                <td id=60></td>
-                <td id=name59></td>
-                <td id=msg60></td>
-                <td id=cost60></td>
+                <td id=6></td>
+                <td id=name5></td>
+                <td id=msg6></td>
+                <td id=cost6></td>
             </tr>
             <tr>
                 <th>7</th>
-                <td id=61></td>
-                <td id=name60></td>
-                <td id=msg61></td>
-                <td id=cost61></td>
+                <td id=7></td>
+                <td id=name6></td>
+                <td id=msg7></td>
+                <td id=cost7></td>
             </tr>
             <tr>
                 <th>8</th>
-                <td id=62></td>
-                <td id=name61></td>
-                <td id=msg62></td>
-                <td id=cost62></td>
+                <td id=8></td>
+                <td id=name7></td>
+                <td id=msg8></td>
+                <td id=cost8></td>
             </tr>
-            
-            
-
+            <tr>
+                <th>9</th>
+                <td id=9></td>
+                <td id=name8></td>
+                <td id=msg9></td>
+                <td id=cost9></td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td id=10></td>
+                <td id=name9></td>
+                <td id=msg10></td>
+                <td id=cost10></td>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td id=11></td>
+                <td id=name10></td>
+                <td id=msg11></td>
+                <td id=cost11></td>
+            </tr>
+            <tr>
+                <th>12</th>
+                <td id=12></td>
+                <td id=name11></td>
+                <td id=msg12></td>
+                <td id=cost12></td>
+            </tr>
+            <tr>
+                <th>13</th>
+                <td id=13></td>
+                <td id=name12></td>
+                <td id=msg13></td>
+                <td id=cost13></td>
+            </tr>
+            <tr>
+                <th>14</th>
+                <td id=14></td>
+                <td id=name13></td>
+                <td id=msg14></td>
+                <td id=cost14></td>
+            </tr>
+            <tr>
+                <th>15</th>
+                <td id=15></td>
+                <td id=name14></td>
+                <td id=msg15></td>
+                <td id=cost15></td>
+            </tr>
+            <tr>
+                <th>16</th>
+                <td id=16></td>
+                <td id=name15></td>
+                <td id=msg16></td>
+                <td id=cost16></td>
+            </tr>
+            <tr>
+                <th>17</th>
+                <td id=17></td>
+                <td id=name16></td>
+                <td id=msg17></td>
+                <td id=cost17></td>
+            </tr>
+            <tr>
+                <th>18</th>
+                <td id=18></td>
+                <td id=name17></td>
+                <td id=msg18></td>
+                <td id=cost18></td>
+            </tr>
+            <tr>
+                <th>19</th>
+                <td id=19></td>
+                <td id=name18></td>
+                <td id=msg19></td>
+                <td id=cost19></td>
+            </tr>
+            <tr>
+                <th>20</th>
+                <td id=20></td>
+                <td id=name19></td>
+                <td id=msg20></td>
+                <td id=cost20></td>
+            </tr>
+            <tr>
+                <th>21</th>
+                <td id=21></td>
+                <td id=name20></td>
+                <td id=msg21></td>
+                <td id=cost21></td>
+            </tr>
             
         </thread>
     </table>

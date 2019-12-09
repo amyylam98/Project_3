@@ -15,7 +15,6 @@
         "https://pokeapi.co/api/v2/item/", true);
         request.onload = function(){
           var data = JSON.parse(this.response);
-          // console.log(data);
           var results = data.results;
           var name = [];
           var url = [];
@@ -89,13 +88,12 @@
                     <a href="gen8.html">Gen VIII</a>
                 </div> -->
         </span>
-        <!-- <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a> -->
+        <a href="moves.html"><button class="move"><br><br>Moves<hr class="mHr"></button></a>
         <span class="item_list">
           <a href="items.html"><button class="items"><br><br>Items<hr class="iHr"></button></a>
                 <div class="dropdown2">
                     <a href="balls.html">Pokeballs</a>
                     <a style="line-height: 40px;" href="battleItems.html">Battle Items</a>
-                    <a style="line-height: 40px;" href="generalItems.html">General Items</a>
                     <a href="holdItems.html">Hold Items</a>
                     <a href="medicine.html">Medicine</a>
                     <a href="stones.html">Stones</a>
@@ -136,7 +134,7 @@
             <tr>
                 <th>2</th>
                 <td id=2></td>
-                <td id=name1>></td>
+                <td id=name1></td>
                 <td id=msg2></td>
                 <td id=cost2></td>
             </tr>
