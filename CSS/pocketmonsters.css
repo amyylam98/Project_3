@@ -1,0 +1,20 @@
+#monsters{
+    margin-left: 37%;
+    margin-top: 5%;
+} */
+
+#pimages{
+    height: 150px;
+    width: 150px;
+    border: none;
+}
+
+#names{
+    font-size: 25px;
+    text-transform: capitalize;
+}
+
+#titlen{
+    font-size: 40px;
+    text-transform: capitalize;
+}
