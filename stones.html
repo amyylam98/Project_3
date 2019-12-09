@@ -12,14 +12,15 @@
       var getItem = function(){ 
         var request = new XMLHttpRequest();
         request.open("GET", 
-        "https://pokeapi.co/api/v2/item/", true);
+        "https://pokeapi.co/api/v2/item-category/10/", true);
         request.onload = function(){
           var data = JSON.parse(this.response);
-          var results = data.results;
+          var items = data.items;
           var name = [];
           var url = [];
-          for(var i = 0; i < 16; i++){
-            var obj = results[i];
+          var max = 21;
+          for(var i = 0; i < max; i++){
+            var obj = items[i];
             name[i] = obj.name;
             url[i] = obj.url;
             document.getElementById("name"+[i]).innerHTML=name[i];
@@ -28,10 +29,10 @@
             var j = 0;    
             var req = new XMLHttpRequest();
             req.onreadystatechange = function(){
-              if(req.readyState == 3 && req.status == 200){
+              if(req.readyState == 4 && req.status == 200){
                 var newData = JSON.parse(req.responseText);
                 icon(newData);
-                if(j != 16){
+                if(j != max){
                   req.open("GET", url[j], true);
                   req.send();
                 }
@@ -124,7 +125,7 @@
               <th>Cost</th>
             </tr>
 
-            <tr>
+             <tr>
                 <th>1</th>
                 <td id=1></td>
                 <td id=name0></td>
@@ -236,7 +237,41 @@
                 <td id=msg16></td>
                 <td id=cost16></td>
             </tr>
-
+            <tr>
+                <th>17</th>
+                <td id=17></td>
+                <td id=name16></td>
+                <td id=msg17></td>
+                <td id=cost17></td>
+            </tr>
+            <tr>
+                <th>18</th>
+                <td id=18></td>
+                <td id=name17></td>
+                <td id=msg18></td>
+                <td id=cost18></td>
+            </tr>
+            <tr>
+                <th>19</th>
+                <td id=19></td>
+                <td id=name18></td>
+                <td id=msg19></td>
+                <td id=cost19></td>
+            </tr>
+            <tr>
+                <th>20</th>
+                <td id=20></td>
+                <td id=name19></td>
+                <td id=msg20></td>
+                <td id=cost20></td>
+            </tr>
+            <tr>
+                <th>21</th>
+                <td id=21></td>
+                <td id=name20></td>
+                <td id=msg21></td>
+                <td id=cost21></td>
+            </tr>
             
         </thread>
     </table>
