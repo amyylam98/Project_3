@@ -7,7 +7,7 @@
         <!-- CSS files for Pokedex -->
         <link type="text/css" rel="stylesheet" href = "CSS/Poke_stylesheet.css" media = "screen">
         <link type="text/css" rel="stylesheet" href = "CSS/menu.css" media = "screen">
-        <link type="text/css" rel="stylesheet" href = "CSS/pocketmonsters.css" media = "screen">
+        <link type="text/css" rel="stylesheet" href = "CSS/pocketmoves.css" media = "screen">
 
         <!-- JavaScript -->
         <script>
@@ -34,7 +34,9 @@
                     function print(){
                         for(var i = results.length - 1; i >= 0; i--){                          
                             document.getElementById("start").insertAdjacentHTML("afterend", 
-                            "<td>" + [i+1] + "</td>" + "<td id = 'names'>" + "<a style='text-decoration:none; color: black;' href='https://pokemondb.net/move/" + name[i] + "'>" + name[i] + "<a>" + "</td>"); 
+                            "<td id = 'names'>" + [i+1] + "</td>" + "<td id = 'names'>" 
+                            + "<a style='text-decoration:none; color: black;' href='https://pokemondb.net/move/" 
+                            + name[i] + "'target='_blank'>" + name[i] + "<a>" + "</td>"); 
 
                         }
                     }
@@ -86,8 +88,8 @@
     <table id = "monsters">
         <thread>
             <tr>
-                <th>Number#</th>
-                <th id = "names">Move Name</th>
+                <th id = "titlen">Number#</th>
+                <th id = "titlen">Move Name</th>
             </tr>
             <tr id = "start"> 
             </tr>
