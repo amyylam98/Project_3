@@ -1,0 +1,27 @@
+#footer {
+    margin-left: 38%;
+    bottom: 0%;
+    position: fixed;
+}
+
+header{
+    font-size: 35px;
+}
+
+#info{
+    font-size: 25px;
+}
+
+img{
+    border: none;
+}
+
+#togepi{
+    height: 150px;
+    width: 150px;
+}
+
+#mew{
+    height: 350px;
+    width: 350px;
+}
