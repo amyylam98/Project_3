@@ -14,11 +14,11 @@ h3{
 }
 
 .backButton{
-    margin-left: -65%;
+    margin-left: -63%;
     position: -webkit-sticky;
     position: sticky;
     z-index: 1; 
-    top: 16%;
+    top: 20%;
 }
 
 .backButton button:hover {

@@ -1,28 +1,38 @@
 table{ 
     border: solid;
     text-align: center;
-    margin-left: 18%;
-    margin-top: -3%;
+    margin-left: 22%;
+    margin-top: -7%;
     text-decoration:none;
 }
 
 
 td{    
     border: solid;
-    font-size: 20px;
+    font-size: 14px;
     text-decoration:none;
 
 }
 
+.backButton button{
+    font-size: 10px;
+    width: 5%;
+}
+
 .backButton{
-    margin-left: -65%;
+    margin-left: -70%;
     position: -webkit-sticky;
     position: sticky;
     z-index: 0; 
-    top: 16%;
+    top: 22%;
 }
 
 .backButton button:hover {
     color: rgba(250, 250, 11, 0.952);
-    font-size: 14px;
+    font-size: 12px;
+}
+
+h1{ 
+    margin-top: -6%;
+    margin-left: 14%;
 }

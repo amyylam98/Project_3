@@ -6,7 +6,7 @@ body {
 
 .header{
     background-color: white;
-    bottom: 84.8%;
+    bottom: 81.5%;
     top: 0%;
     left: 10.5%;
     right: 10.5%;
@@ -39,39 +39,33 @@ hr {
     border-style: solid;
     border-width: 2px;
     margin-left: 12%;
-    margin-top: 2%;
+    margin-top: 1%;
     left: 2%;
-    width: 13%;
+    width: 15%;
     vertical-align: middle;
-}
-
-.gameList{
-    vertical-align: middle;
-}
-
-.gameList{
     position: -webkit-sticky;
     position: sticky;
-    top: 17%;
+    top: 20%;
 
 }
 
 ul li{ 
     position: relative;
     list-style-type: none;
-    margin: 3px;
+    margin: 2px;
     font-weight: bold;
     margin-left: 7%;
     font-family: 'Oswald', sans-serif;
     text-align: left;
-    line-height: 15px;
+    line-height: 13px;
+    font-size: 15px;
 }
 
 .name{
     margin-left: 12%;
     font-weight: normal;
     font-family: 'Oswald', sans-serif;
-    font-size: 17px;
+    font-size: 14px;
     
 }
 
@@ -93,14 +87,14 @@ ul li{
 
 h3{
     text-align: left;
-    margin-left: 28%;
-    margin-top: 4%;
+    margin-left: 31%;
+    margin-top: 2%;
     font-size: 22px;
 }
 
 img{
-    height: 450px;
-    width: 450px;
+    height: 300px;
+    width: 300px;
     z-index: -1;
     border-style: solid;
 }
@@ -111,8 +105,8 @@ figure.gameList3 {
     display: inline-block;
     text-align: center;
     position: relative;
-    width: 20%;
-    margin-left: 5%;
+    width: 16%;
+    margin-left: 10%;
 }
 
 .text{
@@ -127,5 +121,9 @@ figure.gameList3 {
     height: 450px;
     width: 300px;
     border-style: solid;
+}
+
+h2{
+    font-size: 18px;
 }
 

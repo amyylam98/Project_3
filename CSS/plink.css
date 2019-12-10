@@ -4,6 +4,7 @@
 }
 
 #pname{
+    margin-top: -4%;
     font-size: 35px;
     text-transform: capitalize;
 }
@@ -19,7 +20,7 @@
 }
 
 #names{
-    font-size: 25px;
+    font-size: 20px;
     text-transform: capitalize;
 }
 
@@ -38,11 +39,11 @@ img{
 }
 
 .backButton{
-    margin-left: -65%;
+    margin-left: -62%;
     position: -webkit-sticky;
     position: sticky;
     z-index: 1; 
-    top: 16%;
+    top: 20%;
 }
 
 .backButton button:hover {
