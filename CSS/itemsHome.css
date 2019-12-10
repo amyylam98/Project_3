@@ -88,6 +88,11 @@ figure.itemCategories{
     margin-left: 5%;
 }
 
+.text{
+  text-decoration:none; 
+  color: black;
+}
+
 .img img{
   height: 50%;
   width: 50%;
@@ -106,4 +111,104 @@ figure.itemCategories{
 .backButton button:hover {
   color: rgba(250, 250, 11, 0.952);
   font-size: 14px;
+}
+
+/* berry */
+.berries{
+  position: relative;
+  display: inline-block;
+}
+
+.berries .rp{
+  display: none;
+  position: absolute;
+  widows: 100%;
+  height: 83%;
+  top: 0;
+  left: 25%;
+  z-index: 99;
+}
+
+.berries:hover .rp {
+  display:inline;
+}
+
+/* disk */
+.HM{
+  position: relative;
+  display: inline-block;
+}
+
+.HM .disk1 {
+  display: none;
+  position: absolute;
+  widows: 100%;
+  height: 83%;
+  top: 0;
+  left: 25%;
+  z-index: 0;
+}
+
+.HM:hover .disk1  {
+  display:inline;
+}
+
+/* Med */
+.medicine{
+  position: relative;
+  display: inline-block;
+}
+
+.medicine .p3{
+  display: none;
+  position: absolute;
+  widows: 100%;
+  height: 82.5%;
+  top: 0;
+  left: 25%;
+  z-index: 99;
+}
+
+.medicine:hover .p3{
+  display: inline;
+}
+
+/* Sword */
+.sword{
+  position: relative;
+  display: inline-block;
+}
+
+.sword .sword1{
+  display: none;
+  position: absolute;
+  widows: 100%;
+  height: 82.1%;
+  top: 0;
+  left: 25%;
+  z-index: 99;
+}
+
+.sword:hover .sword1{
+  display: inline;
+}
+
+/* Hold Item */
+.holdItem{
+  position: relative;
+  display: inline-block;
+}
+
+.holdItem .h1{
+  display: none;
+  position: absolute;
+  widows: 100%;
+  height: 82.1%;
+  top: 0;
+  left: 25%;
+  z-index: 99;
+}
+
+.holdItem:hover .h1{
+  display: inline;
 }
